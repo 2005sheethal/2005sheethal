@@ -1,22 +1,17 @@
 #include<stdio.h>
-int main() {
-  int i,flag = 0, n;
-  printf("enter the number: ");
+int main()
+{
+  int n, temp, rem, result = 0;
+  printf("enter a number\n");
   scanf("%d", &n);
-    if (n<2){
-      printf("Not a prime number.\n");
-      return 0;
-    }
-  for (i = 2; i , n; i++) {
-    if (n % i == 0) {
-      flag = 1;
-      break;
-    }
-  }
-  if (flag == 0) {
-    printf("prime number.\n");
-  } else {
-    printf("not a prime number.\n");
-    
-    }
+  temp = n;
+  while(n!=0)
+    rem = temp % 10;
+  result = result + (rem * rem * rem);
+  temp = temp / 10;
+  if(result == n)
+    printf("armstrong number\n");
+  else
+    printf("not an armstrong number\n");
+  return 0;
 }
